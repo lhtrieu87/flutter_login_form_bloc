@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
     return StreamBuilder(
       stream: bloc.emailStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
-        return Text('You are logged in as ${snapshot.data}');
+        return Text('You are logged in.');
       },
     );
   }

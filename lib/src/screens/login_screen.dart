@@ -34,6 +34,7 @@ class LoginScreen extends StatelessWidget {
       stream: stateManagementBloc.emailStream,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         return TextField(
+          key: new Key("emailField"),
           onChanged: stateManagementBloc.updateEmail,
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
@@ -50,6 +51,7 @@ class LoginScreen extends StatelessWidget {
       stream: stateManagementBloc.passwordStream,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         return TextField(
+          key: new Key("passwordField"),
           onChanged: stateManagementBloc.updatePassword,
           obscureText: true,
           decoration: InputDecoration(
@@ -67,6 +69,7 @@ class LoginScreen extends StatelessWidget {
       stream: stateManagementBloc.submitValid,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         return RaisedButton(
+          key: new Key("loginButton"),
           child: Text('Login'),
           color: Colors.blue,
           onPressed: snapshot.hasData
